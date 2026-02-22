@@ -1,0 +1,45 @@
+---
+import { Search, Briefcase, CalendarCheck } from "@lucide/astro";
+---
+
+<section class="py-20 md:py-28 bg-bg-alt">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl sm:text-4xl font-bold text-text">
+        Ainda não tem site?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+        <div class="mb-5">
+          <Search size={32} class="text-primary" strokeWidth={1.5} />
+        </div>
+        <p class="text-lg font-medium text-text leading-relaxed">
+          Os seus clientes pesquisam no Google antes de visitar
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+        <div class="mb-5">
+          <Briefcase size={32} class="text-primary" strokeWidth={1.5} />
+        </div>
+        <p class="text-lg font-medium text-text leading-relaxed">
+          Um site profissional transmite confiança e credibilidade
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+        <div class="mb-5">
+          <CalendarCheck size={32} class="text-primary" strokeWidth={1.5} />
+        </div>
+        <p class="text-lg font-medium text-text leading-relaxed">
+          Marcações online poupam tempo — seu e dos seus clientes
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

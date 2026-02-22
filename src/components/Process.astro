@@ -1,0 +1,48 @@
+---
+import { MessageCircle, FileText, Code2, Rocket } from "@lucide/astro";
+
+const steps = [
+  {
+    title: "Conversa",
+    description: "Falamos sobre o seu negócio e o que precisa",
+    Icon: MessageCircle,
+  },
+  {
+    title: "Proposta",
+    description: "Envio um orçamento claro, sem surpresas",
+    Icon: FileText,
+  },
+  {
+    title: "Construção",
+    description: "Crio o seu site em 2 a 4 semanas com actualizações regulares",
+    Icon: Code2,
+  },
+  {
+    title: "Lançamento",
+    description: "O seu site fica online e começa a atrair clientes",
+    Icon: Rocket,
+  },
+];
+---
+
+<section class="py-20 md:py-28 bg-bg">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl sm:text-4xl font-bold text-text">
+        Como funciona
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map((step, index) => (
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 mb-4">
+            <step.Icon size={28} class="text-accent" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-lg font-bold text-text mb-2">{step.title}</h3>
+          <p class="text-text-light leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

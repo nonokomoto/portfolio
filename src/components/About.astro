@@ -1,0 +1,44 @@
+<section id="sobre" class="py-20 md:py-28 bg-bg-alt">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl sm:text-4xl font-bold text-text">
+        Quem sou eu
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Text -->
+      <div class="order-2 md:order-1">
+        <p class="text-lg text-text-light leading-relaxed mb-6">
+          Chamo-me Ney Carvalho. Sou programador web baseado no Luxemburgo.
+        </p>
+        <p class="text-lg text-text-light leading-relaxed mb-6">
+          Trabalho com as mesmas tecnologias que empresas como Netflix e Airbnb — Next.js, React e Supabase — para criar websites profissionais acessíveis aos negócios da nossa comunidade.
+        </p>
+        <p class="text-lg text-text-light leading-relaxed mb-8">
+          Trabalhamos na nossa língua, sem complicações técnicas.
+        </p>
+
+        <div class="flex flex-wrap gap-2">
+          {["Next.js", "React", "Supabase", "Tailwind CSS", "TypeScript"].map(skill => (
+            <span class="bg-primary/10 text-primary text-sm font-medium px-4 py-2 rounded-full">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Photo -->
+      <div class="order-1 md:order-2 flex justify-center">
+        <div class="relative">
+          <div class="absolute inset-0 bg-accent/20 rounded-2xl rotate-3"></div>
+          <img
+            src="/ney-photo.jpg"
+            alt="Ney Carvalho — Programador Web"
+            class="relative rounded-2xl w-72 h-72 sm:w-80 sm:h-80 object-cover shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

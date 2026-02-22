@@ -1,0 +1,89 @@
+---
+import { Check } from "@lucide/astro";
+
+const whatsappLink = "https://wa.me/351926722130?text=Olá%20Ney%2C%20vi%20o%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços";
+
+const packages = [
+  {
+    name: "Essencial",
+    price: "€600",
+    features: [
+      "Site até 5 páginas",
+      "Design responsivo",
+      "Formulário de contacto",
+      "Optimização Google",
+      "1 mês de suporte",
+    ],
+    highlight: false,
+  },
+  {
+    name: "Loja Online",
+    price: "€1.000",
+    features: [
+      "Tudo do Essencial",
+      "Loja com pagamentos",
+      "Gestão de produtos",
+      "Painel de administração",
+      "1 mês de suporte",
+    ],
+    highlight: true,
+  },
+  {
+    name: "Personalizado",
+    price: "Sob consulta",
+    features: [
+      "Sistemas à medida",
+      "Integrações",
+      "Painel de gestão",
+      "Orçamento gratuito",
+    ],
+    highlight: false,
+  },
+];
+---
+
+<section id="precos" class="py-20 md:py-28 bg-bg-alt">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl sm:text-4xl font-bold text-text">
+        Preços transparentes, sem surpresas
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {packages.map((pkg) => (
+        <div class={`rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow ${pkg.highlight ? 'bg-primary text-white ring-2 ring-accent' : 'bg-white border border-primary/5'}`}>
+          <h3 class={`text-xl font-bold mb-2 ${pkg.highlight ? 'text-white' : 'text-text'}`}>
+            {pkg.name}
+          </h3>
+          <p class={`text-3xl font-extrabold mb-6 ${pkg.highlight ? 'text-accent' : 'text-primary'}`}>
+            {pkg.price}
+          </p>
+          <ul class="space-y-3 mb-8">
+            {pkg.features.map((feature) => (
+              <li class="flex items-start gap-3">
+                <Check size={18} class={`mt-0.5 shrink-0 ${pkg.highlight ? 'text-accent' : 'text-green-600'}`} strokeWidth={2.5} />
+                <span class={`text-sm ${pkg.highlight ? 'text-white/90' : 'text-text-light'}`}>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center text-text-light text-sm mt-10 max-w-2xl mx-auto">
+      Todos os sites incluem: certificado SSL, alojamento no primeiro ano, design adaptado ao telemóvel e entrega em 2 a 4 semanas.
+    </p>
+
+    <div class="text-center mt-10">
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors shadow-lg shadow-accent/20"
+      >
+        Pedir orçamento gratuito
+      </a>
+    </div>
+  </div>
+</section>

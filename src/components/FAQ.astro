@@ -1,0 +1,81 @@
+---
+import { ChevronDown } from "@lucide/astro";
+
+const faqs = [
+  {
+    question: "Preciso de saber algo técnico?",
+    answer: "Não, trato de tudo. A sua função é partilhar informação sobre o negócio.",
+  },
+  {
+    question: "Quanto tempo demora?",
+    answer: "Entre 2 a 4 semanas, dependendo do projecto.",
+  },
+  {
+    question: "E se quiser alterar algo depois?",
+    answer: "Incluo 1 mês de suporte gratuito. Alterações posteriores são combinadas.",
+  },
+  {
+    question: "Como funciona o pagamento?",
+    answer: "50% no início do projecto, 50% na entrega.",
+  },
+  {
+    question: "Posso ver exemplos do trabalho?",
+    answer: "Sim! Veja o caso da Josianne na secção anterior.",
+  },
+];
+---
+
+<section class="py-20 md:py-28 bg-bg-alt">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl sm:text-4xl font-bold text-text">
+        Perguntas frequentes
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="faq-item bg-white rounded-2xl shadow-sm border border-primary/5 overflow-hidden">
+          <button
+            class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer"
+            aria-expanded="false"
+            data-index={index}
+          >
+            <span class="text-lg font-semibold text-text pr-4">{faq.question}</span>
+            <div class="faq-chevron shrink-0 transition-transform duration-200">
+              <ChevronDown size={20} class="text-primary" strokeWidth={1.5} />
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-text-light leading-relaxed">{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq-item');
+      const content = item?.querySelector('.faq-content');
+      const chevron = item?.querySelector('.faq-chevron');
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+      // Close all others
+      document.querySelectorAll('.faq-item').forEach(other => {
+        if (other !== item) {
+          other.querySelector('.faq-content')?.classList.add('hidden');
+          other.querySelector('.faq-chevron')?.classList.remove('rotate-180');
+          other.querySelector('.faq-toggle')?.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Toggle current
+      content?.classList.toggle('hidden');
+      chevron?.classList.toggle('rotate-180');
+      button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    });
+  });
+</script>

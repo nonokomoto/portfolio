@@ -1,0 +1,196 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppFloat from '../../components/WhatsAppFloat.astro';
+import { ArrowLeft, ChevronRight, Check, ExternalLink, MessageCircle } from "@lucide/astro";
+
+const whatsappLink = "https://wa.me/351926722130?text=Olá%20Ney%2C%20vi%20o%20caso%20da%20Josianne%20e%20gostaria%20de%20saber%20mais";
+
+const techStack = ["Next.js 15", "Supabase", "Vercel", "Tailwind CSS", "TypeScript"];
+
+const features = [
+  "Sistema de marcações online com confirmação automática",
+  "Blog integrado para partilha de conteúdos",
+  "Galeria de trabalhos com gestão de imagens",
+  "Portal do cliente para gestão de marcações",
+  "Design multilingue — Português, Inglês e Francês",
+  "Painel de administração completo",
+];
+
+const processSteps = [
+  {
+    title: "Análise",
+    description: "Identificámos as necessidades da Josianne: presença online profissional, sistema de marcações e alcance multilingue.",
+  },
+  {
+    title: "Design",
+    description: "Criámos um design elegante e feminino, alinhado com a marca pessoal da terapeuta capilar.",
+  },
+  {
+    title: "Desenvolvimento",
+    description: "Construímos o site com Next.js e Supabase, incluindo o sistema de marcações e blog.",
+  },
+  {
+    title: "Lançamento",
+    description: "Publicámos o site com domínio próprio, SSL e optimização para motores de busca.",
+  },
+];
+---
+
+<Layout
+  title="Caso — Josianne Gomes, Terapeuta Capilar | Ney Carvalho"
+  description="Caso de estudo: site profissional com sistema de marcações para Josianne Gomes, terapeuta capilar. Next.js, Supabase, multilingue."
+>
+  <Navbar />
+
+  <main class="pt-24 pb-20">
+    <!-- Back link -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      <a href="/#portfolio" class="inline-flex items-center gap-2 text-primary hover:text-primary-light transition-colors font-medium">
+        <ArrowLeft size={16} strokeWidth={1.5} />
+        Voltar ao portfolio
+      </a>
+    </div>
+
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <header class="mb-12">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span class="inline-flex items-center gap-1.5 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">
+            <Check size={14} strokeWidth={2.5} />
+            Entregue
+          </span>
+          <span class="text-text-light text-sm">Caso de estudo</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-text mb-4">
+          Josianne Gomes — Terapeuta Capilar
+        </h1>
+        <p class="text-xl text-text-light leading-relaxed">
+          Site profissional com sistema de marcações, blog e galeria, disponível em 3 línguas.
+        </p>
+      </header>
+
+      <!-- Placeholder screenshot -->
+      <div class="bg-gradient-to-br from-primary to-primary-light rounded-2xl h-64 sm:h-80 flex items-center justify-center mb-12">
+        <div class="text-center text-white">
+          <div class="text-6xl mb-4">&#x1F487;&#x200D;&#x2640;&#xFE0F;</div>
+          <p class="text-xl font-semibold">joterapeutacapilar.com</p>
+        </div>
+      </div>
+
+      <!-- Client & Challenge -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-text mb-4">O desafio</h2>
+        <p class="text-text-light leading-relaxed mb-4">
+          A Josianne Gomes é terapeuta capilar e precisava de uma presença online profissional que transmitisse confiança aos seus clientes. O principal desafio era criar uma plataforma completa que permitisse:
+        </p>
+        <ul class="space-y-2 text-text-light">
+          <li class="flex items-start gap-3">
+            <ChevronRight size={18} class="mt-0.5 text-accent shrink-0" strokeWidth={1.5} />
+            Marcações online para poupar tempo e evitar trocas de mensagens
+          </li>
+          <li class="flex items-start gap-3">
+            <ChevronRight size={18} class="mt-0.5 text-accent shrink-0" strokeWidth={1.5} />
+            Suporte multilingue (Português, Inglês e Francês) para alcançar mais clientes
+          </li>
+          <li class="flex items-start gap-3">
+            <ChevronRight size={18} class="mt-0.5 text-accent shrink-0" strokeWidth={1.5} />
+            Blog para partilha de conteúdos e dicas de cuidado capilar
+          </li>
+          <li class="flex items-start gap-3">
+            <ChevronRight size={18} class="mt-0.5 text-accent shrink-0" strokeWidth={1.5} />
+            Galeria para mostrar o seu trabalho
+          </li>
+        </ul>
+      </section>
+
+      <!-- Solution -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-text mb-4">A solução</h2>
+        <p class="text-text-light leading-relaxed mb-6">
+          Construí um site completo com as seguintes funcionalidades:
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {features.map(feature => (
+            <div class="flex items-start gap-3 bg-bg-alt rounded-xl p-4">
+              <Check size={18} class="mt-0.5 text-green-600 shrink-0" strokeWidth={2.5} />
+              <span class="text-sm text-text">{feature}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Tech Stack -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-text mb-4">Tecnologias utilizadas</h2>
+        <div class="flex flex-wrap gap-3">
+          {techStack.map(tech => (
+            <span class="bg-primary/10 text-primary text-sm font-medium px-4 py-2 rounded-full">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-text mb-6">O processo</h2>
+        <div class="space-y-6">
+          {processSteps.map((step, index) => (
+            <div class="flex gap-4">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold shrink-0">
+                  {index + 1}
+                </div>
+                {index < processSteps.length - 1 && (
+                  <div class="w-px h-full bg-primary/20 mt-2"></div>
+                )}
+              </div>
+              <div class="pb-6">
+                <h3 class="text-lg font-bold text-text mb-1">{step.title}</h3>
+                <p class="text-text-light leading-relaxed">{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Link -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-text mb-4">Visite o site</h2>
+        <a
+          href="https://www.joterapeutacapilar.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-primary hover:text-primary-light font-semibold transition-colors text-lg"
+        >
+          www.joterapeutacapilar.com
+          <ExternalLink size={20} strokeWidth={1.5} />
+        </a>
+      </section>
+
+      <!-- CTA -->
+      <section class="bg-primary rounded-2xl p-8 sm:p-12 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+          Quer um site como este?
+        </h2>
+        <p class="text-white/80 mb-8 text-lg">
+          Fale comigo sem compromisso e vamos criar algo incrível para o seu negócio.
+        </p>
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 bg-accent hover:bg-accent-hover text-white font-bold px-8 py-4 rounded-full text-lg transition-colors"
+        >
+          <MessageCircle size={24} strokeWidth={1.5} />
+          Fala comigo no WhatsApp
+        </a>
+      </section>
+    </article>
+  </main>
+
+  <Footer />
+  <WhatsAppFloat />
+</Layout>

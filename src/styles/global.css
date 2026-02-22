@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0F4C5C;
+  --color-primary-light: #1a6b80;
+  --color-accent: #E8A838;
+  --color-accent-hover: #d4952e;
+  --color-bg: #FAFAF7;
+  --color-bg-alt: #F0EDE8;
+  --color-text: #1A1A2E;
+  --color-text-light: #4a4a5a;
+  --color-whatsapp: #25D366;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}

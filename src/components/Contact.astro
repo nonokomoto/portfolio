@@ -1,0 +1,26 @@
+---
+import { MessageCircle } from "@lucide/astro";
+
+const whatsappLink = "https://wa.me/351926722130?text=Olá%20Ney%2C%20vi%20o%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços";
+---
+
+<section id="contacto" class="py-20 md:py-28 bg-bg">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-text mb-6">
+      Pronto para começar?
+    </h2>
+    <p class="text-lg text-text-light leading-relaxed mb-10">
+      Fale comigo sem compromisso. Respondo em menos de 24 horas.
+    </p>
+
+    <a
+      href={whatsappLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-3 bg-whatsapp hover:bg-green-600 text-white font-bold px-10 py-5 rounded-full text-xl transition-colors shadow-lg shadow-whatsapp/20"
+    >
+      <MessageCircle size={28} strokeWidth={1.5} />
+      Fala comigo no WhatsApp →
+    </a>
+  </div>
+</section>
