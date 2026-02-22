@@ -41,5 +41,20 @@ const ogTitle = "Ney Carvalho — Criação de Sites para Negócios Portugueses 
   <body class="bg-bg text-text antialiased">
     <slot />
     <Analytics />
+    <script>
+      // Scroll-triggered animations via Intersection Observer
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll('.anim').forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>

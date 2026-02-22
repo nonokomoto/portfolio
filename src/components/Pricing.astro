@@ -44,15 +44,15 @@ const packages = [
 
 <section id="precos" class="py-20 md:py-28 bg-bg-alt">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-14">
+    <div class="anim text-center mb-14">
       <h2 class="text-3xl sm:text-4xl font-bold text-text">
         Preços transparentes, sem surpresas
       </h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
-      {packages.map((pkg) => (
-        <div class={`rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow ${pkg.highlight ? 'bg-primary text-white ring-2 ring-accent' : 'bg-white border border-primary/5'}`}>
+      {packages.map((pkg, i) => (
+        <div class={`anim anim-d${i + 1} card-lift rounded-2xl p-8 shadow-sm ${pkg.highlight ? 'bg-primary text-white ring-2 ring-accent' : 'bg-white border border-primary/5'}`}>
           <h3 class={`text-xl font-bold mb-2 ${pkg.highlight ? 'text-white' : 'text-text'}`}>
             {pkg.name}
           </h3>
@@ -80,7 +80,7 @@ const packages = [
         href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors shadow-lg shadow-accent/20"
+        class="btn-lift inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors shadow-lg shadow-accent/20"
       >
         Pedir orçamento gratuito
       </a>
