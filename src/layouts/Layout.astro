@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import { Analytics } from '@vercel/analytics/astro'
 
 interface Props {
   title: string;
@@ -39,5 +40,6 @@ const ogTitle = "Ney Carvalho — Criação de Sites para Negócios Portugueses 
   </head>
   <body class="bg-bg text-text antialiased">
     <slot />
+    <Analytics />
   </body>
 </html>
